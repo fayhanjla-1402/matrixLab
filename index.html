@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MatrixLab - media belajar Aljabar Linier interaktif.">
+  <title>MatrixLab — Belajar Aljabar Linier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#beranda" data-page="beranda" aria-label="MatrixLab Beranda">
+      <span class="brand-mark">M</span><span>matrix<span class="brand-light">lab</span><small>RUANG BELAJAR ALJABAR LINIER</small></span>
+    </a>
+    <div class="nav-caption">MENU UTAMA</div>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <button class="nav-link active" data-page="beranda"><span class="nav-icon">⌂</span>Beranda</button>
+      <div class="nav-caption nav-caption-spaced">KALKULATOR</div>
+      <button class="nav-link" data-page="operasi"><span class="nav-icon">⊞</span>Operasi Matriks</button>
+      <button class="nav-link" data-page="determinan"><span class="nav-icon">▦</span>Determinan</button>
+      <button class="nav-link" data-page="invers"><span class="nav-icon">↔</span>Invers Matriks</button>
+    </nav>
+    <div class="sidebar-note">
+      <span class="note-icon">✦</span>
+      <strong>Belajar sambil mencoba</strong>
+      <p>Masukkan angka sendiri dan pahami setiap langkah perhitungannya.</p>
+    </div>
+    <div class="sidebar-footer">MATRIXLAB <span>•</span> VERSI 1.0</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div><span class="eyebrow">ALJABAR LINIER INTERAKTIF</span><div class="topbar-title" id="page-heading">Selamat datang</div></div>
+      <div class="topbar-chip"><span class="status-dot"></span> Siap digunakan</div>
+    </header>
+
+    <section class="page active" id="page-beranda">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="pill">✦ MEDIA PEMBELAJARAN INTERAKTIF</span>
+          <h1>Pahami matriks.<br><span>Langkah demi langkah.</span></h1>
+          <button class="btn btn-primary" data-go="operasi">Mulai eksplorasi <span>→</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-label">MATRIX A</div>
+          <div class="art-matrix"><span>2</span><span>1</span><span>0</span><span>3</span></div>
+          <div class="art-equation">A + B <b>=</b> C</div>
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-dot"></div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">MULAI DARI SINI</span><h2>Jelajahi kalkulator</h2><p>Pilih materi yang ingin kamu pelajari.</p></div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon blue">⊞</div><span class="card-index">01 / OPERASI</span>
+          <h3>Operasi Matriks</h3><p>Jumlahkan, kurangkan, atau kalikan dua matriks dan lihat proses per elemen.</p>
+          <button class="text-link" data-go="operasi">Buka kalkulator <span>→</span></button>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon violet">▦</div><span class="card-index">02 / DETERMINAN</span>
+          <h3>Determinan</h3><p>Hitung determinan matriks ordo 2×2 dan 3×3 dengan uraian rumus.</p>
+          <button class="text-link" data-go="determinan">Buka kalkulator <span>→</span></button>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon mint">↔</div><span class="card-index">03 / INVERS</span>
+          <h3>Invers Matriks</h3><p>Temukan invers matriks 2×2 dan pahami syarat matriks memiliki invers.</p>
+          <button class="text-link" data-go="invers">Buka kalkulator <span>→</span></button>
+        </article>
+      </div>
+      <div class="intro-panel">
+        <div><span class="eyebrow">KONSEP DASAR</span><h2>Apa itu matriks?</h2><p>Matriks adalah susunan bilangan yang diatur dalam baris dan kolom. Ukuran matriks disebut <b>ordo</b>, ditulis sebagai banyak baris × banyak kolom.</p></div>
+        <div class="concept-example"><span class="example-caption">CONTOH MATRIKS A · ORDO 2×2</span><div class="matrix-static"><span>1</span><span>2</span><span>3</span><span>4</span></div><small>2 baris &nbsp;·&nbsp; 2 kolom</small></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-operasi">
+      <div class="page-intro"><span class="eyebrow">KALKULATOR 01</span><h1>Operasi Matriks</h1><p>Lakukan operasi pada dua matriks. Untuk penjumlahan dan pengurangan, kedua matriks harus memiliki ordo yang sama.</p></div>
+      <div class="workspace">
+        <div class="panel input-panel">
+          <div class="panel-heading"><div><span class="eyebrow">LANGKAH 1</span><h2>Atur matriks</h2></div><span class="panel-symbol">⊞</span></div>
+          <label for="operation-type">Jenis operasi</label>
+          <select id="operation-type" class="control"><option value="add">Penjumlahan (+)</option><option value="subtract">Pengurangan (−)</option><option value="multiply">Perkalian (×)</option></select>
+          <label for="operation-order">Ordo matriks</label>
+          <select id="operation-order" class="control"><option value="2">2 × 2</option><option value="3">3 × 3</option></select>
+          <div class="matrix-inputs">
+            <div class="matrix-editor-block"><div class="matrix-name">MATRIKS A <span>Input</span></div><div id="operation-a" class="matrix-editor"></div></div>
+            <div class="operator-symbol" id="operation-symbol">+</div>
+            <div class="matrix-editor-block"><div class="matrix-name">MATRIKS B <span>Input</span></div><div id="operation-b" class="matrix-editor"></div></div>
+          </div>
+          <div class="panel-actions"><button class="btn btn-quiet" id="operation-reset">↺ Reset</button><button class="btn btn-primary" id="operation-calculate">Hitung hasil <span>→</span></button></div>
+          <p class="helper-text">Isi setiap elemen matriks dengan bilangan. Nilai awal disediakan sebagai contoh.</p>
+        </div>
+        <div class="panel result-panel" id="operation-result">
+          <div class="empty-state"><div class="empty-icon">∑</div><h3>Hasil akan muncul di sini</h3><p>Atur matriks di sebelah kiri, lalu tekan tombol <b>Hitung hasil</b>.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-determinan">
+      <div class="page-intro"><span class="eyebrow">KALKULATOR 02</span><h1>Determinan Matriks</h1><p>Determinan adalah nilai skalar yang dapat dihitung dari matriks persegi. Coba matriks 2×2 atau 3×3.</p></div>
+      <div class="workspace">
+        <div class="panel input-panel">
+          <div class="panel-heading"><div><span class="eyebrow">LANGKAH 1</span><h2>Masukkan matriks</h2></div><span class="panel-symbol">▦</span></div>
+          <label for="det-order">Ordo matriks</label><select id="det-order" class="control"><option value="2">2 × 2</option><option value="3">3 × 3</option></select>
+          <div class="matrix-editor-block single-editor"><div class="matrix-name">MATRIKS A <span>Input</span></div><div id="determinant-a" class="matrix-editor"></div></div>
+          <div class="panel-actions"><button class="btn btn-quiet" id="det-reset">↺ Reset</button><button class="btn btn-primary" id="det-calculate">Hitung determinan <span>→</span></button></div>
+        </div>
+        <div class="panel result-panel" id="det-result"><div class="empty-state"><div class="empty-icon">|A|</div><h3>Nilai determinan muncul di sini</h3><p>Masukkan elemen matriks untuk melihat hasil dan penjabaran rumusnya.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-invers">
+      <div class="page-intro"><span class="eyebrow">KALKULATOR 03</span><h1>Invers Matriks</h1><p>Invers matriks adalah matriks yang jika dikalikan dengan matriks asal menghasilkan matriks identitas. Fitur ini menggunakan matriks 2×2.</p></div>
+      <div class="workspace">
+        <div class="panel input-panel">
+          <div class="panel-heading"><div><span class="eyebrow">LANGKAH 1</span><h2>Masukkan matriks</h2></div><span class="panel-symbol">↔</span></div>
+          <div class="matrix-editor-block single-editor"><div class="matrix-name">MATRIKS A <span>Ordo 2×2</span></div><div id="inverse-a" class="matrix-editor"></div></div>
+          <div class="panel-actions"><button class="btn btn-quiet" id="inv-reset">↺ Reset</button><button class="btn btn-primary" id="inv-calculate">Cari invers <span>→</span></button></div>
+          <div class="info-note"><b>Ingat:</b> Matriks hanya memiliki invers jika determinannya tidak sama dengan nol.</div>
+        </div>
+        <div class="panel result-panel" id="inv-result"><div class="empty-state"><div class="empty-icon">A⁻¹</div><h3>Invers akan muncul di sini</h3><p>Masukkan matriks 2×2, lalu tekan <b>Cari invers</b>.</p></div></div>
+      </div>
+    </section>
+    <footer class="site-footer">Dibuat untuk belajar dan bereksperimen dengan Aljabar Linier. <span>MatrixLab © 2026</span></footer>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
